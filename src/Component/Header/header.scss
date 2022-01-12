@@ -1,0 +1,45 @@
+@import "../../Globals/globals";
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("../../Gallery/banner_background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .overlay {
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: .7;
+        background-color: $blackColor;
+    }
+    .headerContent {
+        z-index: 3;
+        h2 {
+            color: $whiteColor;
+            margin-bottom: 15px;
+        }
+        p {
+            color:$whiteColor;
+            margin-bottom: 50px;
+        }
+        .aboutBtn {
+            background-color: $transparentColor;
+            color:$whiteColor;
+            margin-right: 20px;
+            border: 2px solid $whiteColor;
+            transition: all .3s linear;
+            &:hover {
+                background-color: $whiteColor;
+                color:$headingColor;
+            }
+        }
+    }
+}

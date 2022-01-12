@@ -1,0 +1,176 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 16px;
+    height: 100%;
+}
+::selection {
+    background-color: red;
+    color:#fff;
+}
+
+// Global Settings
+
+// Global Colors
+$primaryColor: #B91646;
+$secondaryColor: #370665;
+$headingColor: #0F044C;
+$paragraphColor:#000957;
+$whiteColor:#FAEDF0;
+$blackColor:#1F1D36;
+$transparentColor: #ffffff00;
+
+// Global Fonts
+$headerFont: 'Open Sans', sans-serif;
+$paragraphFont: 'Poppins', sans-serif;
+
+// Global Font Settings
+
+@mixin fontProperty($fontFamily,$fontSize,$textTransform,$fontWeight,$lineHeight,$letterSpacing) {
+    font-family: $fontFamily;
+    font-size:$fontSize;
+    text-transform: $textTransform;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+    @content;
+}
+
+.h1 {
+    @include fontProperty($headerFont, 34px , capitalize , 800, 40px , .05px );
+}
+.h2 {
+    @include fontProperty($headerFont, 32px , capitalize , 800, 46px , .05px );
+}
+.h3 {
+    @include fontProperty($headerFont, 30px , capitalize , 800, 40px , .05px );
+}
+.h4 {
+    @include fontProperty($headerFont, 26px , uppercase , 800, 36px , .05px );
+}
+.p {
+    @include fontProperty($paragraphFont, 14px , normal , 600, 26px, .05px);
+}
+.pre {
+    @include fontProperty($headerFont, 12px , uppercase , 800 , 16px , 2px );
+}
+.btnText {
+    @include fontProperty($headerFont, 16px, uppercase, 600, 22px, .5px)
+}
+// Global Color Settings
+
+.primary {
+    color:$primaryColor;
+}
+.secondary {
+    color: $secondaryColor;
+}
+.headingColor {
+    color:$headingColor;
+}
+.paragraphColor {
+    color: $paragraphColor;
+}
+
+// Responsive Vieport
+
+.row {
+    display:flex;
+}
+
+@for $i from 1 through 12 {
+    .col-s-#{$i} {
+        flex-basis: (8.33% * $i) + px;
+    }
+}
+
+// Global classses
+
+.btn {
+    border-radius: 4px;
+    cursor:pointer;
+    border: none;
+    outline:none;
+}
+.btn.btnLarge {
+    padding: 12px 30px;
+}
+.btn.btnMedium {
+    padding: 8px 25px;
+}
+
+
+
+
+
+// Media queries
+
+@media only screen and (min-width: 768px){
+
+    @for $i from 1 through 12 {
+        .col-m-#{$i} {
+            flex-basis: (8.33% * $i) + px;
+        }
+    }
+
+    .h1 {
+        @include fontProperty($headerFont, 54px , capitalize , 800, 60px , .05px );
+    }
+    .h2 {
+        @include fontProperty($headerFont, 42px , capitalize , 800, 52px , .05px );
+    }
+    .h3 {
+        @include fontProperty($headerFont, 36px , capitalize , 800, 44px , .05px );
+    }
+    .h4 {
+        @include fontProperty($headerFont, 28px , uppercase , 800, 36px , .05px );
+    }
+    .p {
+        @include fontProperty($paragraphFont, 18px , normal , 600, 30px, .05px);
+    }
+    .pre {
+        @include fontProperty($headerFont, 14px , uppercase , 800 , 18px , 3px );
+    }
+    .btnText {
+        @include fontProperty($headerFont, 18px, uppercase, 600, 26px, 1.25px)
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .container-fluid {
+        width: 100%;
+    }
+    @for $i from 1 through 12 {
+        .col-l-#{$i} {
+            flex-basis: (8.33% * $i) + px;
+        }
+    }
+    .h1 {
+        @include fontProperty($headerFont, 72px , capitalize , 800, 80px , .05px );
+    }
+    .h2 {
+        @include fontProperty($headerFont, 56px , capitalize , 800, 60px , .05px );
+    }
+    .h3 {
+        @include fontProperty($headerFont, 42px , capitalize , 800, 50px , .05px );
+    }
+    .h4 {
+        @include fontProperty($headerFont, 32px , uppercase , 800, 40px , .05px );
+    }
+    .p {
+        @include fontProperty($paragraphFont, 20px , normal , 600, 34px, .05px);
+    }
+    .pre {
+        @include fontProperty($headerFont, 14px , uppercase , 800 , 20px , 3px );
+    }
+    .btnText {
+        @include fontProperty($headerFont, 20px, uppercase, 600, 30px, 1.25px)
+    }
+}
